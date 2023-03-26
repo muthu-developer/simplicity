@@ -10,6 +10,16 @@
     font-family: "Georgia Regular font";
 }
 
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    width: inherit;
+} */
+
 /* Common */
 .simplicity-wrapper {
     /* width: 1000px;
@@ -186,6 +196,7 @@ header .header {
 .gallery-wrapper .gallery-box h5 {
     font-size: 18px;
     color: #666666;
+    margin-bottom: 10px;
 }
 
 .gallery-wrapper .gallery-box p {
@@ -251,12 +262,35 @@ header .header {
     float: right;
     width: 70%;
     margin-right: auto;
-    padding: 9px 0px;
+    padding: 25px 0px;
 }
 
 .img-container-content img {
-    padding: 4px;
-    border: 1px solid #96b7be;
+    /* padding: 4px;
+    border: 1px solid #96b7be; */
+    animation: rotate 5s ease-in infinite;
+}
+.gallery-box-bg{
+    background: url("./image/UI.png") no-repeat 89% 141%;
+    background-size: 200px;
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    75%{
+        transform: rotate(270deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
 
 .content_25 p {
@@ -379,7 +413,7 @@ header .header {
 }
 
 /* Responsive Humberger */
-.media-bumberger{
+.media-bumberger {
     width: 25px;
     height: 25px;
     border: none;
@@ -390,6 +424,34 @@ header .header {
     background-size: 29px;
     display: none;
 }
+
+/*Nav Bar */
+.open-nav {
+    right: -15px !important;
+    width: 100vw !important;
+}
+
+ul.nav-menu.open-nav li.nav-list a {
+    display: block;
+    width: 65%
+}
+
+.cross-btn {
+    width: 25px;
+    height: 25px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    background: url("./image/x-mark.png") no-repeat center;
+    background-size: 25px;
+    display: none;
+    position: absolute;
+}
+.tech4{
+    width: 92%;
+}
+
 /* End */
 /* End */
 
@@ -398,33 +460,48 @@ header .header {
 **/
 
 /*Small Device Start*/
-@media only screen and (max-width: 767px) {
-    body{
+@media only screen and (max-width: 1023px) {
+    body {
         overflow-x: hidden;
     }
+
+    .simplicity-wrapper {
+        overflow: hidden;
+    }
+
     .container {
         width: 100%;
         padding: 0px 15px;
+        box-sizing: border-box;
     }
-
+    .header{
+        position: fixed;
+        width: 100%;
+    }
     .header .header_wrapper {
         position: relative;
         display: block;
     }
+    .banner-section{
+        padding-top: 120px;
+    }
 
-    .navigation-section {
+    .navigation-section ul.nav-menu {
         position: absolute;
         background-color: #96b7be;
         width: 320px;
         top: 0;
         height: 100vh;
-        right: -320px;
+        right: -350px;
+        padding-top: 50px;
+        transition: 0.5s ease;
     }
 
     .nav-bar .nav-menu .nav-list {
         display: block;
         max-width: 100%;
         margin-bottom: 15px;
+        border-left: 5px solid #fff;
     }
 
     .banner-wrapper {
@@ -447,7 +524,7 @@ header .header {
     }
 
     .content_section .content_container button {
-        width: 50%;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 25px;
@@ -455,6 +532,15 @@ header .header {
 
     .gallery-section .gallery-wrapper {
         display: block;
+    }
+
+    .gallery-wrapper .gallery-box h5 {
+        margin-bottom: 10px;
+    }
+
+    .gallery-wrapper .gallery-box .img-border img {
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .gallery-wrapper .gallery-box {
@@ -466,37 +552,80 @@ header .header {
         display: block;
     }
 
-    .content-section .content_75{
+    .content-section .content_75 {
         padding-right: 0px
     }
+
     .content-section .content_75,
     .content-section .content_25 {
         width: 100%;
         margin-bottom: 25px;
     }
 
-    .img-container-content h6 {
-        width: 90%;
-        padding: 23px 0px;
+    .content_25 a {
+        display: block;
+        margin: auto;
+        margin-top: 15px;
     }
-    .content-wrapper-footer{
+
+    .img-container-content h6 {
+        width: 80%;
+        padding: 13px 0px;
+    }
+
+    .content-wrapper-footer {
         display: block;
     }
-    .content-box{
+
+    .content-box {
         width: 100%;
         margin-bottom: 25px
     }
 
-    .copy-right .copy_right_div{
-        display: block;
-    }
-    .copy-right .copy_right_div p{
-        margin-bottom: 25px;
-    }
-    .media-bumberger{
+    .copy-right .copy_right_div {
         display: block;
     }
 
+    .copy-right .copy_right_div p {
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .copy-right .copy_right_div p:last-child {
+        margin-bottom: 0;
+    }
+
+    .media-bumberger {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: calc(100% - 60%);
+    }
+
+    .content-box input[type="text"] {
+        width: calc(100vw - 25%);
+    }
+
+    .cross-btn-visible {
+        z-index: 100;
+        top: 25px;
+        right: 10px;
+        display: block;
+    }
+    ul.nav-menu li.nav-list a {
+        display: block;
+        width: 65%
+    }
+    .tech4{
+        width: 100%;
+    }
+    .nav-menu.open-nav{
+        background: url("./image/NavBG.png") no-repeat 10px 50%;
+    }
+    .gallery-box-bg {
+        background: url(./image/UI.png) no-repeat 100% 104%;
+        background-size: 200px;
+    }
 }
 
 /*Small Device End*/

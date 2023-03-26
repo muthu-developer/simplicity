@@ -3,6 +3,7 @@
 
 <head>
     <title>SimplyCity</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./index.css">
 </head>
 
@@ -24,11 +25,11 @@
                                     </p>
                                 </a>
                             </div>
-                             <button class="media-bumberger">
-                            <div class="navigation-section">     
-                                </button>
+                            <button class="media-bumberger" id="nav-humburger"></button>
+                            <div class="navigation-section">
                                 <div class="nav-bar">
-                                    <ul class="nav-menu">
+                                    <button class="cross-btn" id="cross-btn"></button>
+                                    <ul class="nav-menu" id="nav-menu">
                                         <li class="nav-list">
                                             <a href="#">
                                                 <h3>Home</h3>
@@ -51,7 +52,7 @@
                                         </li>
                                         <li class="nav-list">
                                             <a href="#">
-                                                <h3>Link Text</h3>
+                                                <h3>Contact</h3>
                                                 <p>
                                                     Lorem ipsum dolor
                                                     Suspendisse in neque
@@ -76,12 +77,12 @@
                     <div class="banner-wrapper">
                         <div class="image_section">
                             <div class="img_container">
-                                <img src="./image/UI.png" alt="Banner image">
+                                <img src="./image/Tech3.png" alt="Banner image">
                             </div>
                         </div>
                         <div class="content_section">
                             <div class="content_container">
-                                <h3>Egetet Consequam</h3>
+                                <h3>Digital Marketing</h3>
                                 <p>
                                     Maurisuscingillamaliquam quis nequam ut nunc ut malesuada a sempus liberos.
                                     Purusipsum qui sque aenean felit conse cteturis tibulum et congue orci justo
@@ -102,7 +103,7 @@
                 <div class="container">
                     <div class="gallery-wrapper">
                         <div class="gallery-box">
-                            <h5>LIPSUM</h5>
+                            <h5>Web Development</h5>
                             <p>
                                 Nullamlacus dui ipsum conseqlo borttis non euisque morbipen a sdapibulum orna.
                             </p>
@@ -111,30 +112,30 @@
                             </div>
                         </div>
                         <div class="gallery-box">
-                            <h5>LIPSUM</h5>
+                            <h5>Digital Marketing</h5>
                             <p>
                                 Nullamlacus dui ipsum conseqlo borttis non euisque morbipen a sdapibulum orna.
                             </p>
                             <div class="img-border">
-                                <img src="./image/Rectangle-small.png" alt="Small Image">
+                                <img src="./image/Tech2.png" alt="Small Image">
                             </div>
                         </div>
                         <div class="gallery-box">
-                            <h5>LIPSUM</h5>
+                            <h5>Ecommerce</h5>
                             <p>
                                 Nullamlacus dui ipsum conseqlo borttis non euisque morbipen a sdapibulum orna.
                             </p>
                             <div class="img-border">
-                                <img src="./image/Rectangle-small.png" alt="Small Image">
+                                <img src="./image/Tech7.png" alt="Small Image">
                             </div>
                         </div>
                         <div class="gallery-box">
-                            <h5>LIPSUM</h5>
+                            <h5>Team Work</h5>
                             <p>
                                 Nullamlacus dui ipsum conseqlo borttis non euisque morbipen a sdapibulum orna.
                             </p>
                             <div class="img-border">
-                                <img src="./image/Rectangle-small.png" alt="Small Image">
+                                <img src="./image/Tech4.png" class="tech4" alt="Small Image">
                             </div>
                         </div>
                     </div>
@@ -180,9 +181,8 @@
                             <div class="content_25">
                                 <div class="img-heading">
                                     <div class="img-container-content">
-                                        <img src="./image/Path.png" alt="Path">
-                                        <h6>Nullamlacus dui ipsum
-                                            conseque loborttis</h6>
+                                        <img src="./image/shaking-hands.png" alt="Path">
+                                        <h6>Humen To machine</h6>
                                     </div>
                                 </div>
                                 <p>
@@ -204,7 +204,7 @@
         <!-- Footer -->
         <footer>
             <div class="footer-wrapper">
-                <div class="contact">
+                <div class="contact gallery-box-bg">
                     <div class="container">
                         <div class="content-wrapper-footer">
                             <div class="content-box">
@@ -237,7 +237,8 @@
                                         CBE: 641035<br>
                                         Tel: 9787676642<br>
                                     </address>
-                                    <a class="mailto" href = "mailto: muthulingaraj96@gmail.com">muthulingaraj96@gmail.com</a>
+                                    <a class="mailto"
+                                        href="mailto: muthulingaraj96@gmail.com">muthulingaraj96@gmail.com</a>
                                 </div>
                             </div>
                         </div>
@@ -255,6 +256,32 @@
         </footer>
         <!-- End -->
     </div>
+    <script>
+        let humberger = document.getElementById("nav-humburger");
+        humberger.addEventListener("click", openNavbar);
+
+        let cross_btn = document.getElementById("cross-btn");
+        cross_btn.addEventListener("click", closeNavbar)
+
+        function openNavbar() {
+            let nav_menu = document.getElementById("nav-menu");
+            if (!nav_menu.classList.contains("open-nav")) {
+                nav_menu.classList.add("open-nav");
+                cross_btn.classList.add("cross-btn-visible")
+            }
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeNavbar(){
+            let nav_menu = document.getElementById("nav-menu");
+            if (nav_menu.classList.contains("open-nav")) {
+                nav_menu.classList.remove("open-nav");
+                cross_btn.classList.remove("cross-btn-visible")
+            }
+            document.body.style.overflow = 'auto';
+        }
+
+    </script>
 </body>
 
 </html>
