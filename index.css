@@ -628,6 +628,13 @@ ul.nav-menu.open-nav li.nav-list a {
     }
 }
 
+@media only screen and (max-width: 450px){
+    .content-box input[type="text"] {
+        width: calc(100vw - 30%);
+    }
+}
+
+
 /*Small Device End*/
 
 /***
